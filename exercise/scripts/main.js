@@ -43,6 +43,13 @@ window.addEventListener('DOMContentLoaded', function() {
         alert('You matched all the cards, nice job!');
       }
     });
+
+    var deckColor = window.location.hash;
+
+    if (card && deckColor) {
+      var className = 'cards--' + deckColor.substring(1);
+      card.classList.add(className);
+    }
   });
 
   // Part 2: Allow the user to customize the colour of the cards.
@@ -51,10 +58,10 @@ window.addEventListener('DOMContentLoaded', function() {
   // - #orange
   // - #red
   var deckElement = document.querySelector('.Cards');
-  var deckColor = window.location.hashh;
+  // var deckColor = window.location.hash;
 
-  if (deckElement && deckColor) {
-    var className = 'cards--' + deckColor;
-    deckElement.classList.add(className);
-  }
+  // if (deckElement && deckColor) {
+  //   var className = 'cards--' + deckColor;
+  //   deckElement.classList.add(className);
+  // }
 });
